@@ -6,7 +6,8 @@ import csv
 with open('budget_data.csv', 'r') as csvfile:
     csvreader = csv.reader(csvfile, delimiter = ',')
 
-    next(csvreader, None)
+    # Skip header
+    csv_header = next(csvreader)
 
     total_months = 0
     net_total = 0
