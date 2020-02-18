@@ -69,6 +69,7 @@ txtpath = os.path.join('..', 'CSV_files', 'results.txt')
 
 with open(txtpath, 'a') as txtfile:
 
+    # Still looking for a better way to do this
     txtfile.write('Election Results\r-------------------------\r')
     txtfile.write(f'Total votes: {total_votes}')
     txtfile.write('\r-------------------------\r')
