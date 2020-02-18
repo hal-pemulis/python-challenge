@@ -5,7 +5,7 @@ import os
 import csv
 
 # set variable to file path
-csvpath = os.path.join('..', 'csv_txt_files', 'budget_data.csv')
+csvpath = os.path.join('..', 'CSV_files', 'budget_data.csv')
 
 # access file and begin loop
 with open(csvpath, 'r') as csvfile:
@@ -66,7 +66,7 @@ print(f'Greatest Increase in Profits: {months[profit_loss.index(max(profit_loss)
 print(f'Greatest Decrease in Profits: {months[profit_loss.index(min(profit_loss))]} ({min(profit_loss)})')
 
 # set variable to new file path 
-txtpath = os.path.join('..', 'csv_txt_files', 'budget_data.txt')
+txtpath = os.path.join('..', 'CSV_files', 'budget_data.txt')
 
 # create new text file and begin loop
 with open(txtpath, 'w') as txtfile:
