@@ -9,7 +9,7 @@ vote_list = []
 candidates = []
 votes = []
 
-csvpath = os.path.join('..', 'CSV_files', 'election_data.csv')
+csvpath = os.path.join('..', 'csv_txt_files', 'election_data.csv')
 
 # Open csv file
 with open(csvpath, 'r') as csvfile:
@@ -65,7 +65,7 @@ print('-------------------------')
 print(f'Winner: {candidates[votes.index(max(votes))]}')
 
 # Create new path and txt file to write results to
-txtpath = os.path.join('..', 'results', 'results.txt')
+txtpath = os.path.join('..', 'csv_txt_files', 'results.txt')
 
 with open(txtpath, 'a') as txtfile:
 
