@@ -60,10 +60,10 @@ print(f'Average Change: {round(float(sum(average_change)/len(average_change)), 2
 # calculates and prints the month and number of the greatest increase in profits...
 # by find the max number in 'profit_loss' list and referencing that same position...
 # in the 'months' list
-print(f'Greatest Increase in Profits: {months[profit_loss.index(max(profit_loss))]} ({max(profit_loss)})')
+print(f'Greatest Increase in Profits: {months[average_change.index(max(average_change))+1]} ({max(average_change)})')
 
 # same for the lowest number in 'profit_loss' list
-print(f'Greatest Decrease in Profits: {months[profit_loss.index(min(profit_loss))]} ({min(profit_loss)})')
+print(f'Greatest Decrease in Profits: {months[average_change.index(min(average_change))+1]} ({min(average_change)})')
 
 # set variable to new file path 
 txtpath = os.path.join('..', 'Results', 'budget_data.txt')
