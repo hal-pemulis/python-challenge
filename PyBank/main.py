@@ -19,7 +19,7 @@ with open(csvpath, 'r') as csvfile:
     net_total = 0
     months = []
     profit_loss = []
-    average_change = []
+    change = []
 
     # begin loop through CSV rows
     for row in csvreader:
@@ -44,8 +44,8 @@ for i in range(len(profit_loss)):
     
     # conditional to skip the first position in list
     if i > 0:
-        # calculates every change between months and appends to 'average_change' list
-        average_change.append(profit_loss[i] - profit_loss[i-1])
+        # calculates every change between months and appends to 'change' list
+        change.append(profit_loss[i] - profit_loss[i-1])
 
 # prints 'total_months' (aka number of rows minus header)
 print(f'Total Months: {total_months}')
@@ -54,16 +54,16 @@ print(f'Total Months: {total_months}')
 print(f'Total: {net_total}')
 
 # calculates and prints average change by adding all the numbers... 
-# in 'average_change' and dividing sum by lenth of the list 
-print(f'Average Change: {round(float(sum(average_change)/len(average_change)), 2)}')
+# in 'change' and dividing sum by lenth of the list 
+print(f'Average Change: {round(float(sum(change)/len(change)), 2)}')
 
 # calculates and prints the month and number of the greatest increase in profits...
 # by find the max number in 'profit_loss' list and referencing that same position...
 # in the 'months' list
-print(f'Greatest Increase in Profits: {months[average_change.index(max(average_change))+1]} ({max(average_change)})')
+print(f'Greatest Increase in Profits: {months[change.index(max(change))+1]} ({max(change)})')
 
 # same for the lowest number in 'profit_loss' list
-print(f'Greatest Decrease in Profits: {months[average_change.index(min(average_change))+1]} ({min(average_change)})')
+print(f'Greatest Decrease in Profits: {months[change.index(min(change))+1]} ({min(change)})')
 
 # set variable to new file path 
 txtpath = os.path.join('..', 'Results', 'budget_data.txt')
@@ -75,9 +75,9 @@ with open(txtpath, 'w') as txtfile:
     # (probably a better and more efficient way to do this)
     txtfile.write(f'Total Months: {total_months}\r')
     txtfile.write(f'Total: {net_total}\r')
-    txtfile.write(f'Average Change: {int(sum(average_change)/len(average_change))}\r')
-    txtfile.write(f'Greatest Increase in Profits: {months[profit_loss.index(max(profit_loss))]} ({max(profit_loss)})\r')
-    txtfile.write(f'Greatest Decrease in Profits: {months[profit_loss.index(min(profit_loss))]} ({min(profit_loss)})\r')
+    txtfile.write(f'Average Change: {int(sum(change)/len(change))}\r')
+    txtfile.write(f'Greatest Increase in Profits: {months[change.index(max(change))+1]} ({max(change)})\r')
+    txtfile.write(f'Greatest Decrease in Profits: {months[change.index(min(change))+1]} ({min(change)})\r')
 
     # close the newly created text file
     txtfile.close()
