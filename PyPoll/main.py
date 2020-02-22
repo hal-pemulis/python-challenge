@@ -65,7 +65,7 @@ print('-------------------------')
 print(f'Winner: {candidates[votes.index(max(votes))]}')
 
 # Create new path and txt file to write results to
-txtpath = os.path.join('..', 'CSV_files', 'results.txt')
+txtpath = os.path.join('..', 'Results', 'results.txt')
 
 with open(txtpath, 'a') as txtfile:
 

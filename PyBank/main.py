@@ -66,7 +66,7 @@ print(f'Greatest Increase in Profits: {months[profit_loss.index(max(profit_loss)
 print(f'Greatest Decrease in Profits: {months[profit_loss.index(min(profit_loss))]} ({min(profit_loss)})')
 
 # set variable to new file path 
-txtpath = os.path.join('..', 'CSV_files', 'budget_data.txt')
+txtpath = os.path.join('..', 'Results', 'budget_data.txt')
 
 # create new text file and begin loop
 with open(txtpath, 'w') as txtfile:
